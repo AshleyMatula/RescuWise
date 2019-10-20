@@ -124,6 +124,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     os.path.join('static'),
