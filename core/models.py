@@ -10,5 +10,5 @@ class Shelter(models.Model):
 
 class  Animals(models.Model):
     animal_type = models.CharField(max_length=200)
-    current_shelter = models.OneToOneField(Shelter,on_delete=models.CASCADE,)
+    current_shelter = models.OneToOneField(Shelter, on_delete=models.CASCADE)
  
