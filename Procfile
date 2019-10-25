@@ -1,1 +1,1 @@
-web: gunicorn masonspace.wsgi
+web: gunicorn RescuWise.wsgi
