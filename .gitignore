@@ -1,6 +1,5 @@
 #django/project specific
 staticfiles/
-**/migrations
 media/images/
 
 # Byte-compiled / optimized / DLL files
