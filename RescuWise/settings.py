@@ -25,7 +25,7 @@ SECRET_KEY = 'ja391197!tv&r$qbptd10(ecx0visy&ur#*)se&+*j(+v9#fbp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rescuwise.herokuapp.com']
 
 
 # Application definition
