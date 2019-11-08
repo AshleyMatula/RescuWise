@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <ul>
+    {% for current_animal in object_list %}
+      <h2>{{ current_animal.name }}</h2>
+      <li>{{ current_animal.breed }}</li>
+      <li>{{ current_animal.animal_type }}</li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>

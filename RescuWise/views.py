@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
+from core.models import Animal
+
+class AnimalIndex(ListView):
+    model = Animal
+    template_name = 'animals.html'
 
 class browsecompanies(TemplateView):
       template_name = 'browse-companies.html'
@@ -162,4 +167,3 @@ class taskslistlayout1(TemplateView):
 
 class taskslistlayout2(TemplateView):
       template_name = 'tasks-list-layout-2.html'
-
