@@ -14,11 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-
+from django.contrib import admin
 from django.urls import path
 from RescuWise.views import *
 
 urlpatterns = [
+    path('animals/', AnimalIndex.as_view(), name='animals'),
+    path('admin/', admin.site.urls),
     path('browse-companies.html', browsecompanies.as_view(), name='browsecompanies'),
     path('dashboard-bookmarks.html', dashboardbookmarks.as_view(), name='dashboardbookmarks'),
     path('dashboard-manage-bidders.html', dashboardmanagebidders.as_view(), name='dashboardmanagebidders'),
