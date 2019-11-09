@@ -1,6 +1,6 @@
 #django/project specific
 staticfiles/
-media/images/
+#media/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#VS CODE
+.vscode/

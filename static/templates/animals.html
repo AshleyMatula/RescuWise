@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,9 +10,24 @@
 
     <ul>
     {% for current_animal in object_list %}
+      <img src="{{ current_animal.profile_picture.url }}">
       <h2>{{ current_animal.name }}</h2>
       <li>{{ current_animal.breed }}</li>
       <li>{{ current_animal.animal_type }}</li>
+      <li>{{ current_animal.current_shelter }}</li>
+      <li>{{ current_animal.color }}</li>
+      <li>{{ current_animal.age }}</li>
+      <li>{{ current_animal.euth_date }}</li>
+      <li>{{ current_animal.id_number }}</li>
+      <li>{{ current_animal.current_pledges }}</li>
+      <li>{{ current_animal.goal }}</li>
+      <li>{{ current_animal.neutered_spayed }}</li>
+      <li>{{ current_animal.description }}</li>
+      <li>{{ current_animal.hw }}</li>
+      <li>{{ current_animal.surrender_reason }}</li>
+      <li>{{ current_animal.weight }}</li>
+      <br>
+      <br>
     {% endfor %}
     </ul>
   </body>
