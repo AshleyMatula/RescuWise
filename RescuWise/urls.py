@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from RescuWise.views import *
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('animals/', AnimalIndex.as_view(), name='animals'),
     path('admin/', admin.site.urls),
@@ -76,3 +79,6 @@ urlpatterns = [
     path('tasks-list-layout-1.html', taskslistlayout1.as_view(), name='taskslistlayout1'),
     path('tasks-list-layout-2.html', taskslistlayout2.as_view(), name='taskslistlayout2'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

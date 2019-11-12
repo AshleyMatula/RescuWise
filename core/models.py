@@ -18,7 +18,7 @@ class Shelter(models.Model):
 class Animal(models.Model):
     animal_type = models.CharField(max_length=200, default="unknown")
     current_shelter = models.OneToOneField(Shelter, on_delete=models.CASCADE)
-    profile_picture = models.ImageField(default='images/default.jpg', upload_to='images/')
+    profile_picture = models.ImageField(default='images/default.png', upload_to='images/')
     breed = models.CharField(max_length=200, default="unknown")
     color = models.CharField(max_length=200, default="unknown")
     age = models.IntegerField()
@@ -32,3 +32,6 @@ class Animal(models.Model):
     hw = models.BooleanField()
     surrender_reason = models.CharField(max_length=200, default="unknown")
     weight = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.id_number} {self.name} - {self.current_shelter}"
