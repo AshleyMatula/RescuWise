@@ -78,7 +78,4 @@ urlpatterns = [
     path('tasks-grid-layout.html', tasksgridlayout.as_view(), name='tasksgridlayout'),
     path('tasks-list-layout-1.html', taskslistlayout1.as_view(), name='taskslistlayout1'),
     path('tasks-list-layout-2.html', taskslistlayout2.as_view(), name='taskslistlayout2'),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -6,3 +6,5 @@ sqlparse==0.3.0
 whitenoise==4.1.4
 python-dotenv==0.10.3
 psycopg2==2.8.4
+boto3==1.10.15
+django-storages==1.7.2
