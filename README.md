@@ -25,7 +25,7 @@ Someone needs to write an elevator pitch for this thing.
 
 6. Create `.env` file in the project root directory:
 
-   Your variables will vary a bit depending on your setup but use this template to start. Make sure to enter the credentials for your local database.
+   Your variables will vary a bit depending on your setup but use this template to start. Make sure to enter the credentials for your local database. (**When necessary, request AWS keys in Slack.**)
 
    ```
    SECRET_KEY=ja391197!tv&r$qbptd10(ecx0visy&ur#*)se&+*j(+v9#fbp
@@ -44,9 +44,9 @@ Someone needs to write an elevator pitch for this thing.
    # DATABASE_HOST=ec2-174-129-18-42.compute-1.amazonaws.com
    # DATABASE_PORT=5432
 
-   AWS_ACCESS_KEY_ID=AKIA6FGA7QKHKD54PF5I
-   AWS_SECRET_ACCESS_KEY=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
-   AWS_STORAGE_BUCKET_NAME=rescuewise-uploads
+   # AWS_ACCESS_KEY_ID=
+   # AWS_SECRET_ACCESS_KEY=
+   # AWS_STORAGE_BUCKET_NAME=
    ```
 
 7. Migrate your local database:
