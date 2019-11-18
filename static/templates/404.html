@@ -1,233 +1,18 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-    <!-- Responsive/Encoding Metas -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
 
-    <!-- SEO Metas -->
-    <meta name="description" content="Fundraising - Ultimate Charity/Donations HTML Template" />
-    <meta name="keywords" content="fundraising, charity, ngo,  html template" />
-    <meta name="author" content="ThemeSLR" />
+{% block pagetitle %}Fundraising - Ultimate Charity/Donations HTML Template{% endblock pagetitle %}
 
-    <!-- Page Title -->
-    <title>Fundraising - Ultimate Charity/Donations HTML Template</title>
+{% block headertitle %}Get in Touch{% endblock headertitle %}
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.png">
+{% block headersubtitle %}Your donation is protected. Share your love over a cause{% endblock headersubtitle %}
 
-    <!-- Begin: CSS Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-	<link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.transitions.css" />
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/font-awesome-animation.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/YTPlayer.css" /><!-- CSS: YTPlayer CSS -->
-    <link rel="stylesheet" type="text/css" href="css/swipebox.css" />
-    <link rel="stylesheet" type="text/css" href="css/simple-line-icons.css" />
-    <link rel="stylesheet" type="text/css" href="css/navigation.css" />
-    <link rel="stylesheet" type="text/css" href="css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="css/color-schemes/skin-blue.css" id="css-default" />
-    <!-- End: CSS Stylesheets -->
+{% block contenttitle %}
+<h2 class="section-title"> Fundraising Company <span>For Better Lifes </span></h2>
+<p>Fundraising is now made easy using Fundraising HTML Template! Share the news and press<br /> releases to your focus group and complete charity causes using donations.</p>
+{% endblock contenttitle %}
 
-    <!-- Google Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Signika:300,400,600,700&amp;subset=latin-ext%7CRaleway:300,300i,400,400i,500,500i,600,600i,700,800,900' rel='stylesheet' type='text/css'>
-</head>
+{% block bodycontent %}
 
-<!-- BODY -->
-<body class="home" id="body">
-    <!-- PAGE LOADER -->
-    <div class="amaezi-page-loader">
-        <div id="loader-wrapper">
-            <div id="loader"></div>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="container">
-            <div class="col-md-3">
-                <a class="navbar-brand" href="home-image.html">
-                    <img alt="logo" src="img/theme_logo_dark.png">
-                </a>
-            </div>
-            <div class="col-md-9 fundraising-contact-details">
-                <a href="#">
-                    <i class="icon-phone icons"></i> Call Us: <label>+34-2345-3456</label>
-                </a>
-                <a href="#">
-                    <i class="icon-location-pin icons"></i> Our Address: <label>93L, Str. J. Martin, Rome</label>
-                </a>
-                <div class="header-nav-actions">
-                    <!-- DONATIONS BUTTON -->
-                    <a class="donate-now" href="#">
-                        <i class="icon-heart icons"></i> Give Donation
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="sticky-header row" id="sticky-header">
-        <div class="sticky-header-content container">
-            <div class="row">
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#theme-main-nav-menu" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="theme-main-nav-menu">
-                            <ul class="nav navbar-nav navbar-left">
-                                <li><a href="home-image.html">Home</a></li>
-                                <li><a href="fundraising-causes.html">Fundraising Causes</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="gallery-2-columns.html">Gallery 2 Columns</a></li>
-                                        <li><a href="gallery-3-columns.html">Gallery 3 Columns</a></li>
-                                        <li><a href="gallery-4-columns.html">Gallery 4 Columns</a></li>
-                                        <li><a href="gallery-mixed-columns.html">Gallery Mixed Columns</a></li>
-                                        <li><a href="gallery-instagram-3-columns.html">Instagram 3 Columns</a></li>
-                                        <li><a href="gallery-instagram-4-columns.html">Instagram 4 Columns</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="home-image.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="fundraising-causes.html">Fundraising Causes</a></li>
-                                        <li><a href="contact.html">Contact us</a></li>
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="#">404 Not Found</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="blog.html">Blog Archive</a></li>
-                                        <li><a href="blog-article.html">Article Page</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="about.html">About</a></li>
-                            </ul>
-                        </div>
-                        <!-- /.navbar-collapse -->
-                    </div>
-                    <!-- /.container-fluid -->
-                </nav> 
-            </div>
-        </div>
-    </div>
-
-
-    <!-- HEADER -->
-    <header class="amaezi-fullscreen-header" id="large-header" data-scroll-index="0">
-
-        <!-- HEADER OVERLAY -->
-        <div class="amaezi-header-overlay"></div>
-
-        <!-- HEADER CONTENT -->
-        <div class="amaezi_header_content">
-            <h1 class="amaezi_header_title">Fundraising &amp; Charity</h1>
-            <h3 class="amaezi_header_subtitle">Your donation is protected. Share your love over a cause</h3>
-            <a class="btn schedule-visit-btn" href="#" data-scroll-nav="4">Go Fund a Cause</a>
-        </div>
-    </header>
-
-
-    <!-- MAIN CONTAINER -->
-	<div id="container" class="main-content">
-        <!-- SECTION: OUR SERVICES -->
-        <section class="high-padding gray-section" data-scroll-index="1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- SERVICES SHORTCODE -->
-                        <div class="row services-shortcode">
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3 class="text-right"><strong>Clean HTML &amp; CSS Code</strong></h3>
-                                        <p class="text-right">Nullam non efficitur purus. Sed vitae lorem vel arcu imperdiet ullamcorper. Ut quis odio est. In vestibulum dignissim nisl.</p>
-                                    </div>
-                                </div>
-                                <div class="spacer_20"></div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3 class="text-right"><strong>Well Documented Template</strong></h3>
-                                        <p class="text-right">Nullam non efficitur purus. Sed vitae lorem vel arcu imperdiet ullamcorper. Ut quis odio est. In vestibulum dignissim nisl.</p>
-                                    </div>
-                                </div>
-                                <div class="spacer_20"></div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3 class="text-right"><strong>Multiple Home Variants</strong></h3>
-                                        <p class="text-right">Nullam non efficitur purus. Sed vitae lorem vel arcu imperdiet ullamcorper. Ut quis odio est. In vestibulum dignissim nisl.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <img src="img/content/features.jpg" alt="" class="img-rounded" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3 class="text-left"><strong>Pixel Perfect Design</strong></h3>
-                                        <p class="text-left">Nullam non efficitur purus. Sed vitae lorem vel arcu imperdiet ullamcorper. Ut quis odio est. In vestibulum dignissim nisl.</p>
-                                    </div>
-                                </div>
-
-                                <div class="spacer_20"></div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3 class="text-left"><strong>Retina Ready Icons</strong></h3>
-                                        <p class="text-left">Nullam non efficitur purus. Sed vitae lorem vel arcu imperdiet ullamcorper. Ut quis odio est. In vestibulum dignissim nisl.</p>
-                                    </div>
-                                </div>
-                                <div class="spacer_20"></div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h3 class="text-left"><strong>Fancy Gallery Included</strong></h3>
-                                        <p class="text-left">Nullam non efficitur purus. Sed vitae lorem vel arcu imperdiet ullamcorper. Ut quis odio est. In vestibulum dignissim nisl.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- SECTION: CAUSES -->
-        <section class="high-padding white-section">
-            <div class="container">
-                <!-- TITLE + SUBTITLE section -->
-                <div class="relative section-header"> 
-                    <h2 class="section-title"> For a <span>Better Life </span></h2>
-                    <p>Fundraising is now made easy using Fundraising HTML Template! Share the news and press<br /> releases to your focus group and complete charity causes using donations.</p>
-                </div>
                 <!-- Blog posts section -->
                 <div class="items-wrap blog_posts_list blog-posts-shortcode">
                     <div class="posts-list grid">
@@ -240,7 +25,7 @@
                                                 <img src="img/gallery/1.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -250,7 +35,7 @@
                                                 </h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised        
+                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%">
@@ -264,7 +49,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-4">
                                 <div class="row">
                                     <div class="single-post clearfix animateIn" data-animate="fadeIn">
@@ -273,7 +58,7 @@
                                                 <img src="img/gallery/2.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -281,7 +66,7 @@
                                                 <h3 class="post-title text-center"><a href="blog-article.html">Africa's Classes Revamp</a></h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$650</span> of <span class="goal-text">$900</span> raised        
+                                                        <span class="income">$650</span> of <span class="goal-text">$900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
@@ -295,7 +80,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-4">
                                 <div class="row">
                                     <div class="single-post clearfix animateIn" data-animate="fadeIn">
@@ -304,7 +89,7 @@
                                                 <img src="img/gallery/3.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -312,7 +97,7 @@
                                                 <h3 class="post-title text-center"><a href="blog-article.html">Stitching Together A New Life</a></h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised        
+                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%">
@@ -326,8 +111,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
-                        </div> 
+                            </div>
+                        </div>
 
                         <div class="spacer_50"></div>
 
@@ -340,7 +125,7 @@
                                                 <img src="img/gallery/4.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -348,7 +133,7 @@
                                                 <h3 class="post-title text-center"><a href="blog-article.html">Marco the Parrot Needs You</a></h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$650</span> of <span class="goal-text">$900</span> raised        
+                                                        <span class="income">$650</span> of <span class="goal-text">$900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
@@ -362,7 +147,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-4">
                                 <div class="row">
                                     <div class="single-post clearfix animateIn" data-animate="fadeIn">
@@ -371,7 +156,7 @@
                                                 <img src="img/gallery/5.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -379,7 +164,7 @@
                                                 <h3 class="post-title text-center"><a href="blog-article.html">Husky Surgery Needs Funds</a></h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised        
+                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%">
@@ -393,7 +178,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-4">
                                 <div class="row">
                                     <div class="single-post clearfix animateIn" data-animate="fadeIn">
@@ -402,7 +187,7 @@
                                                 <img src="img/gallery/6.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -410,7 +195,7 @@
                                                 <h3 class="post-title text-center"><a href="blog-article.html">Family Get Together</a></h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$650</span> of <span class="goal-text">$900</span> raised        
+                                                        <span class="income">$650</span> of <span class="goal-text">$900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
@@ -424,7 +209,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                                
+                            </div>
                         </div>
 
                         <div class="spacer_50"></div>
@@ -438,7 +223,7 @@
                                                 <img src="img/gallery/7.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -446,7 +231,7 @@
                                                 <h3 class="post-title text-center"><a href="blog-article.html">Paw Surgery for Tom the Cat</a></h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised        
+                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%">
@@ -460,7 +245,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-4">
                                 <div class="row">
                                     <div class="single-post clearfix animateIn" data-animate="fadeIn">
@@ -469,7 +254,7 @@
                                                 <img src="img/gallery/8.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -477,7 +262,7 @@
                                                 <h3 class="post-title text-center"><a href="blog-article.html">Fundraising for Brothers</a></h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised        
+                                                        <span class="income">$1.400</span> of <span class="goal-text">$2,900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%">
@@ -491,7 +276,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-4">
                                 <div class="row">
                                     <div class="single-post clearfix animateIn" data-animate="fadeIn">
@@ -500,7 +285,7 @@
                                                 <img src="img/gallery/9.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -508,7 +293,7 @@
                                                 <h3 class="post-title text-center"><a href="blog-article.html">Helping Africa Education</a></h3>
                                                 <div class="give-goal-progress">
                                                     <div class="raised">
-                                                        <span class="income">$1650</span> of <span class="goal-text">$1900</span> raised        
+                                                        <span class="income">$1650</span> of <span class="goal-text">$1900</span> raised
                                                     </div>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
@@ -522,10 +307,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                                
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
         </section>
 
@@ -534,7 +319,7 @@
         <section class="white-section high-padding" data-scroll-index="2">
             <div class="container">
                 <!-- TITLE + SUBTITLE section -->
-                <div class="relative section-header animateIn" data-animate="fadeIn"> 
+                <div class="relative section-header animateIn" data-animate="fadeIn">
                     <h2 class="section-title"> These Causes <span>Needs Your Attention</span></h2>
                     <p>Fundraising Template allows you to add multiple media types into a cause just to make sure<br /> it gets the desired attention and focus from its visitors.</p>
                 </div>
@@ -554,11 +339,11 @@
         </section>
 
 
-   
+
         <section class="high-padding gray-section" data-scroll-index="3">
             <div class="container">
                 <!-- TITLE + SUBTITLE section -->
-                <div class="relative section-header animateIn" data-animate="fadeIn"> 
+                <div class="relative section-header animateIn" data-animate="fadeIn">
                     <h2 class="section-title"> From <span>The Blog </span></h2>
                     <p>Blogging is now made easy using Fundraising HTML Template! Share the news and press<br /> releases to your focus group and complete charity causes using donations.</p>
                 </div>
@@ -574,7 +359,7 @@
                                                 <img src="img/gallery/1.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -589,7 +374,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="single-post clearfix animateIn" data-animate="fadeIn">
@@ -598,7 +383,7 @@
                                                 <img src="img/gallery/2.jpg" alt=""/>
                                                 <figcaption>
                                                     <i class="icon-arrow-right-circle"></i>
-                                                </figcaption>           
+                                                </figcaption>
                                             </figure>
                                         </div>
                                         <div class="col-md-12 post-details">
@@ -613,10 +398,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                                
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
         </section>
 
@@ -627,7 +412,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!-- TITLE + SUBTITLE section -->
-                        <div class="relative section-header text-center animateIn" data-animate="fadeIn"> 
+                        <div class="relative section-header text-center animateIn" data-animate="fadeIn">
                             <h2 class="section-title"> NGO Donor's <span>Testimonials </span></h2>
                             <p>Testimonials are always a good source of quality infos.</p>
                         </div>
@@ -690,7 +475,7 @@
         <section class="high-padding gray-section" data-scroll-index="3">
             <div class="container">
                 <!-- TITLE + SUBTITLE section -->
-                <div class="relative section-header animateIn" data-animate="fadeIn"> 
+                <div class="relative section-header animateIn" data-animate="fadeIn">
                     <h2 class="section-title"> Fellow <span>Volunteers</span></h2>
                     <p>Volunteers help easy using Fundraising Template! Share the news and press releases<br /> to your focus group and complete charity causes using donations.</p>
                 </div>
@@ -707,7 +492,7 @@
                                         <p class="team-member-details">Duis vel nibh at velit scelerisque suscipit. Curabitur blandit mollis lacus. Proin viverra</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-3 text-center">
                                 <div class="row">
                                     <img src="img/members/member_05-3.jpg" class="img-circle width_80" alt="" />
@@ -717,7 +502,7 @@
                                         <p class="team-member-details">Duis vel nibh at velit scelerisque suscipit. Curabitur blandit mollis lacus. Proin viverra</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-3 text-center">
                                 <div class="row">
                                     <img src="img/members/member_05-4.jpg" class="img-circle width_80" alt="" />
@@ -727,7 +512,7 @@
                                         <p class="team-member-details">Duis vel nibh at velit scelerisque suscipit. Curabitur blandit mollis lacus. Proin viverra</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-md-3 text-center">
                                 <div class="row">
                                     <img src="img/members/member_05-6.jpg" class="img-circle width_80" alt="" />
@@ -737,10 +522,10 @@
                                         <p class="team-member-details">Duis vel nibh at velit scelerisque suscipit. Curabitur blandit mollis lacus. Proin viverra</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
         </section>
 
@@ -814,138 +599,4 @@
     </div>
 
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="row footer-top animateIn" data-animate="fadeIn">
-            <div class="container">
-                <div class="high-padding row">
-                    <div class="widget widget_text col-md-6">
-                        <a href="#" class="footer-logo">
-                            <img src="img/theme_logo_light.png" alt="" />
-                        </a>
-                        <div class="spacer_10"></div>
-
-                        <p>Fundraising HTML blandit lectus vitae convallis. Ut ipsum enim, consectetur at lobortis at, sagittis vel nisl. Nam non maximus elit, at sollicitudin mi. Donec ut tortor varius, feugiat ante venenatis, efficitur mauris. </p>
-                        <div class="spacer_15"></div>
-
-                        <!-- SOCIAL LINKS -->
-                        <aside class="widget widget_social_links">
-                            <div class="social_links">
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-dribbble"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-stumbleupon"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </div>
-                        </aside>
-                    </div>
-                    <div class="widget widget_nav_menu col-md-3">
-                        <h3 class="widget-title"> Fundraising <span>Causes</span></h3>
-                        <div class="menu-footer-1-latest-causes-container">
-                            <ul class="menu">
-                                <li class="menu-item">
-                                    <a href="#">Help Marta start walking again</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">Help save Nicolas’s paws</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">Max the Husky, Surgery Fund</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">Help us say welcome to Josua</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">Marry Jane kids college fund</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="widget widget_nav_menu col-md-3">
-                        <h3 class="widget-title row"> From <span>The Blog</span></h3>
-                        <ul class="widget_blog_posts row">
-                            <li>
-                                <div class="col-md-3 no_gap post-thumbnail relative">
-                                    <a href="#">
-                                        <img alt="" class="img-rounded" src="img/content/fundraising_activism_33-70x70.jpg">
-                                    </a>
-                                </div>
-                                <div class="col-md-9 post-details">
-                                    <a href="#">New Education During National LMS Day</a>
-                                    <div class="clearfix"></div>
-                                    <span class="post-date">July 18, 2017</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col-md-3 no_gap post-thumbnail relative">
-                                    <a href="#">
-                                        <img alt="" class="img-rounded" src="img/content/fundraising_activism_11-70x70.jpg">
-                                    </a>
-                                </div>
-                                <div class="col-md-9 post-details">
-                                    <a href="#">Stitching Together A New Life</a>
-                                    <div class="clearfix"></div>
-                                    <span class="post-date">July 18, 2017</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row footer-bottom">
-            <a class="amaezi-top" href="#body">
-                <i class="fa fa-angle-up"></i>      
-            </a>
-            <div class="container">
-                <div class="row animateIn" data-animate="fadeIn">
-                    <div class="copyright-informations text-left col-md-6">
-                        Made with <i class="icon-heart fa faa-tada faa-fast animated"></i> in Europe by ThemeSLR
-                    </div>
-                    <div class="text-right col-md-6">
-                        <ul class="menu">
-                            <li class="menu-item">
-                                <a href="#">Contact</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#">Blog</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#">Donations</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#">Purchase</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-
-    <!-- Begin: JS Scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAl-EDTJ5_uU3zBIX7-wNTu-qSZr1DO5Dw'></script>
-    <script src='js/gmaps-v3.js'></script>
-    <script src="js/custom.js"></script>
-	<!-- End: JS Scripts -->
-</body>
-</html>
+  {% endblock bodycontent %}

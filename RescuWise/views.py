@@ -7,7 +7,30 @@ class AnimalIndex(ListView):
     template_name = 'animals.html'
 
 class HomePage(TemplateView):
-    template_name = 'home-image.html'
+    template_name = 'contact.html'
+
+class About(TemplateView):
+    template_name = 'about.html'
+
+class pages404(TemplateView):
+    template_name = '404.html'
+
+class BlogArticle(TemplateView):
+    template_name = 'blog-article.html'
+
+class BlogPage(TemplateView):
+    template_name = 'blog.html'
+
+class Fundraising(TemplateView):
+    template_name = 'fundraising-causes.html'
+
+class Gallery3(TemplateView):
+    template_name = 'gallery-3-columns.html'
+
+class Instagram3(TemplateView):
+    template_name = 'gallery-instagram-3-columns.html'
+
+
 # class browsecompanies(TemplateView):
 #       template_name = 'browse-companies.html'
 
