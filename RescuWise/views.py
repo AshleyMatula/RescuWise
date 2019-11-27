@@ -1,169 +1,178 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
-from core.models import Animal
+from core.models import *
+
+
+from django.views.generic import *
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from RescuWise.forms import *
+from django.views.generic import *
+from django.views import View
+from django.core.exceptions import ValidationError
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
+import os
+from django.core.mail import send_mail
+from django.contrib import messages
+from datetime import *
+from django.http import HttpResponseForbidden, HttpResponseRedirect
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+
 
 class AnimalIndex(ListView):
     model = Animal
     template_name = 'animals.html'
 
-class browsecompanies(TemplateView):
-      template_name = 'browse-companies.html'
 
-class dashboardbookmarks(TemplateView):
-      template_name = 'dashboard-bookmarks.html'
 
-class dashboardmanagebidders(TemplateView):
-      template_name = 'dashboard-manage-bidders.html'
+class Home(TemplateView):
+    template_name = "index.html"
 
-class dashboardmanagecandidates(TemplateView):
-      template_name = 'dashboard-manage-candidates.html'
+class DynamicStaticPages(TemplateView):
 
-class dashboardmanagejobs(TemplateView):
-      template_name = 'dashboard-manage-jobs.html'
 
-class dashboardmanagetasks(TemplateView):
-      template_name = 'dashboard-manage-tasks.html'
+    def get_template_names(self, **kwargs):
 
-class dashboardmessages(TemplateView):
-      template_name = 'dashboard-messages.html'
+        if self.kwargs.get('template_name'):
+            # favicons load first so with out this this dynamic view doesn't work.
+            if self.kwargs.get('template_name') == "favicon.ico":
+                pass
+            else:
+                return self.kwargs.get('template_name')
+        #if there is no url default it index.html
 
-class dashboardmyactivebids(TemplateView):
-      template_name = 'dashboard-my-active-bids.html'
+        return "index.html"
 
-class dashboardpostajob(TemplateView):
-      template_name = 'dashboard-post-a-job.html'
 
-class dashboardpostatask(TemplateView):
-      template_name = 'dashboard-post-a-task.html'
 
-class dashboardreviews(TemplateView):
-      template_name = 'dashboard-reviews.html'
+class SignUp(View):
 
-class dashboardsettings(TemplateView):
-      template_name = 'dashboard-settings.html'
+    def get(self, request, *args, **kwargs):
+        user_form = UserCreationForm()
+        profile_form = UserSignUp()
 
-class dashboard(TemplateView):
-      template_name = 'dashboard.html'
 
-class documentation(TemplateView):
-      template_name = 'documentation.html'
+        return render(request, 'signup.html', {
+            'user_form': user_form,
+            'profile_form': profile_form
+        })
 
-class freelancersgridlayoutfullpage(TemplateView):
-      template_name = 'freelancers-grid-layout-full-page.html'
+    def post(self, request, *args, **kwargs):
+            # load both forms to check validity
 
-class freelancersgridlayout(TemplateView):
-      template_name = 'freelancers-grid-layout.html'
+        user_form = UserCreationForm(self.request.POST)
+        profile_form = UserSignUp(self.request.POST)
+        # if both are valid...
+        if user_form.is_valid() and profile_form.is_valid():
 
-class freelancerslistlayout1(TemplateView):
-      template_name = 'freelancers-list-layout-1.html'
+            # save the user form and log the user in
+            # saving triggers the create_user_profile function in the
+            # Profile model.
+            user = user_form.save(commit=False)
+            # user.first_name = profile_form.cleaned_data["first_name"]
+            # user.last_name = profile_form.cleaned_data["last_name"]
+            user.email = user_form.cleaned_data["username"]
+            user.username = user_form.cleaned_data["username"]
+            user.save()
+            login(request, user)
 
-class freelancerslistlayout2(TemplateView):
-      template_name = 'freelancers-list-layout-2.html'
+            # after having created the new row in the Profile model for the new user...
+            # re-initiate the profile form with the instance and user_id
+            # equal to the current user and save the form
+            profile_form = UserSignUp(
+                self.request.POST, instance=self.request.user.profile)
+            profile = profile_form.save(commit=False)
+            profile.user_type = profile_form.cleaned_data["user_type"]
+            profile_form.save()
 
-class index2(TemplateView):
-      template_name = 'index-2.html'
+            send_mail(
+                'New User has signed up',
+                user.first_name + ' ' + user.last_name + ' signed up with the email ' + user.email,
+                os.environ.get('EMAIL'),
+                [os.environ.get('ADMIN_EMAIL')],
+                fail_silently=False,
+            )
 
-class index3(TemplateView):
-      template_name = 'index-3.html'
+            return redirect('/edit_profile')
 
-class indexloggedout(TemplateView):
-      template_name = 'index-logged-out.html'
+        else:
 
-class index(TemplateView):
-      template_name = 'index.html'
+            return render(request, 'signup.html', {
+                'user_form': user_form,
+                'profile_form': profile_form
+            })
 
-class jobsgridlayoutfullpagemapOpenStreetMap(TemplateView):
-      template_name = 'jobs-grid-layout-full-page-map-OpenStreetMap.html'
 
-class jobsgridlayoutfullpagemap(TemplateView):
-      template_name = 'jobs-grid-layout-full-page-map.html'
+class Login(FormView):
+    template_name = "login.html"
+    form_class = AuthenticationForm
+    success_url = "/edit_profile/"
 
-class jobsgridlayoutfullpage(TemplateView):
-      template_name = 'jobs-grid-layout-full-page.html'
+    def post(self, request, *args, **kwargs):
 
-class jobsgridlayout(TemplateView):
-      template_name = 'jobs-grid-layout.html'
+        form = self.get_form()
+        if form.is_valid():
+            user = form.get_user()
+            login(self.request, user)
+            return redirect(self.get_success_url())
+        else:
+            return self.form_invalid(form)
 
-class jobslistlayout1OpenStreetMap(TemplateView):
-      template_name = 'jobs-list-layout-1-OpenStreetMap.html'
 
-class jobslistlayout1(TemplateView):
-      template_name = 'jobs-list-layout-1.html'
+class Logout(FormView):
 
-class jobslistlayout(TemplateView):
-      template_name = 'jobs-list-layout-2.html'
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return redirect("/")
 
-class jobslistlayoutfullpagemapOpenStreetMap(TemplateView):
-      template_name = 'jobs-list-layout-full-page-map-OpenStreetMap.html'
 
-class jobslistlayoutfullpagemap(TemplateView):
-      template_name = 'jobs-list-layout-full-page-map.html'
+def page_not_found_view(request, exception):
+    return render(request, 'errors/404.html', status=404)
 
-class pages404(TemplateView):
-      template_name = 'pages-404.html'
 
-class pagesblogpost(TemplateView):
-      template_name = 'pages-blog-post.html'
+def error_view(request, exception=None):
+    return render(request, 'errors/500.html', status=500)
 
-class pagesblog(TemplateView):
-      template_name = 'pages-blog.html'
 
-class pagescheckoutpage(TemplateView):
-      template_name = 'pages-checkout-page.html'
+def permission_denied_view(request, exception):
+    return render(request, 'errors/403.html', status=403)
 
-class pagescontactOpenStreetMap(TemplateView):
-      template_name = 'pages-contact-OpenStreetMap.html'
 
-class pagescontact(TemplateView):
-      template_name = 'pages-contact.html'
+def bad_request_view(request, exception):
+    return render(request, 'errors/400.html', status=400)
 
-class pagesiconscheatsheet(TemplateView):
-      template_name = 'pages-icons-cheatsheet.html'
 
-class pagesinvoicetemplate(TemplateView):
-      template_name = 'pages-invoice-template.html'
 
-class pageslogin(TemplateView):
-      template_name = 'pages-login.html'
+class CreateAnimal(CreateView):
+    template_name = "createview.html"
+    model = Animal
+    fields = ['animal_type','name']
+    success_url = 'listanimals'
 
-class pagesorderconfirmation(TemplateView):
-      template_name = 'pages-order-confirmation.html'
 
-class pagespricingplans(TemplateView):
-      template_name = 'pages-pricing-plans.html'
+class ListAnimals(ListView):
+    template_name = "listview.html"
+    model = Animal
+    fields = [
+        'animal_type',
+        'current_shelter',
+        'breed',
+        'color',
+        'name',]
 
-class pagesregister(TemplateView):
-      template_name = 'pages-register.html'
+class CreateShelter(CreateView):
+    template_name = "createview.html"
+    model = Shelter
+    fields = [
+        'shelter_name',
+        'address',
+        'phone',
+        'email',
+        'website']
+    success_url = 'list_inventory'
 
-class pagesuserinterfaceelements(TemplateView):
-      template_name = 'pages-user-interface-elements.html'
 
-class singlecompanyprofileOpenStreetMap(TemplateView):
-      template_name = 'single-company-profile-OpenStreetMap.html'
-
-class singlecompanyprofile(TemplateView):
-      template_name = 'single-company-profile.html'
-
-class singlefreelancerprofile(TemplateView):
-      template_name = 'single-freelancer-profile.html'
-
-class singlejobpageOpenStreetMap(TemplateView):
-      template_name = 'single-job-page-OpenStreetMap.html'
-
-class singlejobpage(TemplateView):
-      template_name = 'single-job-page.html'
-
-class singletaskpage(TemplateView):
-      template_name = 'single-task-page.html'
-
-class tasksgridlayoutfullpage(TemplateView):
-      template_name = 'tasks-grid-layout-full-page.html'
-
-class tasksgridlayout(TemplateView):
-      template_name = 'tasks-grid-layout.html'
-
-class taskslistlayout1(TemplateView):
-      template_name = 'tasks-list-layout-1.html'
-
-class taskslistlayout2(TemplateView):
-      template_name = 'tasks-list-layout-2.html'
+class ListShelters(ListView):
+    template_name = "listview.html"
+    model = Shelter
