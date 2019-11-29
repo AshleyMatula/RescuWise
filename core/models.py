@@ -1,6 +1,5 @@
 from django.db import models
 from core.model_lists import *
-# Create your models here.
 from django.db import models
 from django.contrib.auth.models import User
 from django.dispatch import receiver
@@ -9,8 +8,6 @@ from django.db.models.signals import post_save
 
 class Shelter(models.Model):
     shelter_name = models.CharField(max_length=200, default="unknown")
-    # location_gps_longitude = models.FloatField(null=True, blank=True, default=None)
-    # location_gps_latitude = models.FloatField(null=True, blank=True, default=None)
     address = models.CharField(max_length=200, default="unknown")
     phone = models.CharField(max_length=200, default='555-555-5555')
     email = models.EmailField(max_length=100, default='example@email.com')
@@ -44,7 +41,6 @@ class Animal(models.Model):
 
 
 class Profile(models.Model):
-
     user = models.OneToOneField(User, on_delete=models.CASCADE,)
     organization = models.CharField(verbose_name="Name",max_length=100, blank=False,)
     location_city = models.CharField(verbose_name="City",max_length=100, blank=True,)
@@ -54,11 +50,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=100,blank=True,null=True)
     email = models.EmailField(max_length=100,blank=True,null=True)
     terms_agree = models.TextField(blank=True,default="",verbose_name="I agree to the website's Privacy Policy & Terms and Conditions.")
-    main_picture = models.ImageField(verbose_name="Profile Picture",upload_to = 'media/',blank=True,)
-    description = models.TextField(verbose_name="Description",max_length=1500,default="",blank=True)
-
-    # genre = models.CharField(verbose_name="Main Type of Content:",choices=CONTENT_TYPES,max_length=100, blank=True,)
-
+    main_picture = models.ImageField(verbose_name="Profile Picture",upload_to='media/',default='images/default.png',blank=True,)
     is_published = models.BooleanField(default=True,verbose_name='Would you like others to view your profile? ')
     created_at = models.DateTimeField(auto_now_add=True)
     last_updated_at = models.DateTimeField(auto_now=True)

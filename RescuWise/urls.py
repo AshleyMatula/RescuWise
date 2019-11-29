@@ -26,7 +26,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
+    # temp as example
     path('animals/', AnimalIndex.as_view(), name='animals'),
+
+    # Admin Urls
     path('admin/', admin.site.urls),
     
     # Login and Auth Views #
@@ -37,8 +40,10 @@ urlpatterns = [
     path('password_reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
     path('password_reset/complete/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
-    path('access_resource_error/',TemplateView.as_view(template_name="access_resource_error.html")),
+    path('access_resource_error/', TemplateView.as_view(template_name="access_resource_error.html")),
 
+    path('dashboard/', DashboardView.as_view(), name='dashboard'),
+    
     # action urls
     path('createanimal/',CreateAnimal.as_view()),
     path('listanimals/',ListAnimals.as_view()),

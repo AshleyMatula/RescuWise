@@ -29,9 +29,7 @@ class Home(TemplateView):
 
 class DynamicStaticPages(TemplateView):
 
-
     def get_template_names(self, **kwargs):
-
         if self.kwargs.get('template_name'):
             # favicons load first so with out this this dynamic view doesn't work.
             if self.kwargs.get('template_name') == "favicon.ico":
@@ -39,7 +37,6 @@ class DynamicStaticPages(TemplateView):
             else:
                 return self.kwargs.get('template_name')
         #if there is no url default it index.html
-
         return "index.html"
 
 
@@ -50,17 +47,16 @@ class SignUp(View):
         user_form = UserCreationForm()
         profile_form = UserSignUp()
 
-
         return render(request, 'signup.html', {
             'user_form': user_form,
             'profile_form': profile_form
         })
 
     def post(self, request, *args, **kwargs):
-            # load both forms to check validity
-
+        # load both forms to check validity
         user_form = UserCreationForm(self.request.POST)
         profile_form = UserSignUp(self.request.POST)
+        
         # if both are valid...
         if user_form.is_valid() and profile_form.is_valid():
 
@@ -92,10 +88,9 @@ class SignUp(View):
                 fail_silently=False,
             )
 
-            return redirect('/edit_profile')
+            return redirect('/dashboard')
 
         else:
-
             return render(request, 'signup.html', {
                 'user_form': user_form,
                 'profile_form': profile_form
@@ -105,10 +100,9 @@ class SignUp(View):
 class Login(FormView):
     template_name = "login.html"
     form_class = AuthenticationForm
-    success_url = "/edit_profile/"
+    success_url = "/dashboard/"
 
     def post(self, request, *args, **kwargs):
-
         form = self.get_form()
         if form.is_valid():
             user = form.get_user()
@@ -124,6 +118,8 @@ class Logout(FormView):
         logout(request)
         return redirect("/")
 
+class DashboardView(TemplateView):
+    template_name = 'dashboard.html'
 
 def page_not_found_view(request, exception):
     return render(request, 'errors/404.html', status=404)
@@ -140,14 +136,11 @@ def permission_denied_view(request, exception):
 def bad_request_view(request, exception):
     return render(request, 'errors/400.html', status=400)
 
-
-
 class CreateAnimal(CreateView):
     template_name = "createview.html"
     model = Animal
     fields = ['animal_type','name']
     success_url = 'listanimals'
-
 
 class ListAnimals(ListView):
     template_name = "listview.html"
@@ -169,7 +162,6 @@ class CreateShelter(CreateView):
         'email',
         'website']
     success_url = 'list_inventory'
-
 
 class ListShelters(ListView):
     template_name = "listview.html"
