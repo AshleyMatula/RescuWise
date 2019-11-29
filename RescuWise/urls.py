@@ -17,13 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from RescuWise.views import *
-
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.conf.urls.static import static
+
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('animals/', AnimalIndex.as_view(), name='animals'),
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('', HomePage.as_view(), name='home'),
     path('about/', About.as_view(), name='about'),
     path('404/', pages404.as_view(), name='404'),
@@ -86,4 +91,28 @@ urlpatterns = [
     # path('tasks-grid-layout.html', tasksgridlayout.as_view(), name='tasksgridlayout'),
     # path('tasks-list-layout-1.html', taskslistlayout1.as_view(), name='taskslistlayout1'),
     # path('tasks-list-layout-2.html', taskslistlayout2.as_view(), name='taskslistlayout2'),
+=======
+    # Login and Auth Views #
+    path('signup/', SignUp.as_view(), name="signup"),
+    path('login/', Login.as_view(), name="login"),
+    path('logout/', Logout.as_view(), name="logout"),
+    path('password_reset/', auth_views.PasswordResetView.as_view(template_name='password_reset.html'), name='password_reset'),
+    path('password_reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
+    path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
+    path('password_reset/complete/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
+    path('access_resource_error/',TemplateView.as_view(template_name="access_resource_error.html")),
+    path('access_resource_error/',TemplateView.as_view(template_name="access_resource_error.html")),
+
+    # action urls
+    path('createanimal/',CreateAnimal.as_view()),
+    path('listanimals/',ListAnimals.as_view()),
+    path('createshelter/',CreateShelter.as_view()),
+    path('listshelters/',ListShelters.as_view()),
+
+    # catch alls
+    path('', Home.as_view()),
+    path('<template_name>/', DynamicStaticPages.as_view()),
+
+
+>>>>>>> c17c69e883c983d7c8e54574e47ec05be985c1d6
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
