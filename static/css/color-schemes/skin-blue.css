@@ -1,0 +1,270 @@
+/*
+* 
+* 
+* Main color:   [BLUE]:       #2BDE73
+* Hover color:  [Dark-BLUE]:  #1fcb64
+* 
+* 
+*/
+
+
+/*Selection Styling*/
+::selection{
+    color: #ffffff;
+    background: #1fcb64;
+}
+::-moz-selection { /* Code for Firefox */
+    color: #ffffff;
+    background: #1fcb64;
+}
+
+/*Semi transparent background color*/
+.widget_nav_menu .menu a:hover::after{
+    background: rgba(0, 198, 227, 0.1);
+}
+.portfolio-overlay{
+    background-color: rgba(0, 198, 227, 0.4);
+}
+.widget_nav_menu .menu a i,
+.section-title::after,
+.section-overlay {
+    background: rgba(0, 198, 227, 0.6);
+}
+.amaezi-header-overlay.semitransparent-colored {
+    background-color: rgba(0, 198, 227, 0.8);
+}
+.section-foods .popular-item.hovered a,
+.section-foods .popular-item:hover a{
+    background: rgba(0, 198, 227, 0.8);
+}
+/*BORDER-COLOR*/
+.bordered-icons .social > a, 
+.blockquote-reverse, 
+p.header-btns a.btn,
+.isotope-filters > li,
+.daily-specials-shortcode .day-name::after,
+blockquote.pull-right, 
+#menu_foods .synced .item h3,
+.make-reservation input.submit,
+.btn.bordered,
+blockquote, 
+.amaezisearch.open .amaezi-search-form{
+    border-color: #2BDE73;
+}
+.cbp_tmtimeline > li:nth-child(2n+1) .cbp_tmlabel::after{
+    border-right-color: #2BDE73;
+}
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+    border-right-color: #1fcb64;
+}
+input:focus,
+textarea:focus,
+.form-control:focus,
+.contact-form .row textarea:focus, 
+.contact-form .row input[type="text"]:focus{
+    border: 2px solid #2BDE73;
+}
+.grid li.shown:hover > a::before{
+    border: 8px solid #2BDE73;
+}
+.share-this-post .tooltip.top > .tooltip-arrow{
+    border-top-color: #2BDE73;
+}
+.share-this-post .tooltip.bottom > .tooltip-arrow{
+    border-bottom-color: #2BDE73;
+}
+.share-this-post .tooltip.right > .tooltip-arrow{
+    border-right-color: #2BDE73;
+}
+.share-this-post .tooltip.left > .tooltip-arrow{
+    border-left-color: #2BDE73;
+}
+.share-this-post .tooltip > .tooltip-inner {
+    background-color: #2BDE73;
+}
+/*BOX-SHADOW*/
+.filters li::after {
+    box-shadow: 1px 0 #2BDE73 inset;
+}
+/*COLOR*/
+.footer-bottom i,
+.theme-accordion-menu i,
+a,
+.popular .pricing-header, 
+.popular .currency, 
+.daily-specials-shortcode .daily-special:hover .day-name,
+.daily-specials-shortcode .daily-special:hover .price,
+.daily-specials-shortcode .daily-special .day-name,
+.daily-specials-shortcode .daily-special .price,
+.popular .duration,
+.search-content .widget-title span,
+.widget_nav_menu .fa,
+.amaezisearch.open .search-input,
+.sticky-social-links i,
+footer .widget_nav_menu .menu a::before,
+#search-content .widget_nav_menu .menu a::before,
+.popular .pricing-header > h2,
+.btn.bordered i,
+.btn.bordered,
+.page-title span i,
+.bordered-icons .social > a i,
+.make-reservation input.submit,
+form label.error,
+.pagination li a span,
+#countdown p,
+#countdown span,
+.pagination li a,
+footer .footer-bottom .menu .menu-item a:hover,
+.widget_blog_posts .post-details > a:hover,
+footer .widget_nav_menu .menu a:hover,
+.amaezi_header_title > span,
+.feature-group .col-md-4,
+.member-name > span,
+footer .widget-title > span,
+h3 span,
+.give-goal-progress .income, .give-goal-progress .goal-text,
+.dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:focus, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover,
+.section-title span,
+.section-title > span,
+.dropcap {
+    color: #2BDE73;
+}
+/*COLOR - HOVER STATE*/
+.contact-social-networks > ul i, .contact-infos-area > ul i,
+.btn.focus, 
+.btn:focus, 
+.btn:hover,
+a:hover, 
+.dark-section .our-menu-shortcode a.viewdetails:hover, 
+.dark-section .our-menu-shortcode .food-modal a:hover,
+a:focus, 
+.menu-wrap a:hover, 
+.menu-wrap a:focus{
+    color: #1fcb64;
+}
+
+
+/*BACKGROUND COLOR - NORMAL STATE*/
+.nicescroll-rails > div{
+    background-color: #2BDE73 !important;
+}
+.highlighting-text.rose,
+figure.lift-thumbnail p,
+.btn-danger,
+#cd-zoom-in, 
+body .fc .fc-event,
+#cd-zoom-out,
+.amaezi-page-loader,
+.schedule-visit-btn,
+.share-via a,
+.social_links > a,
+.tagcloud > a,
+.amaezi-top,
+.default-color,
+.cd-nav li a:hover, .cd-nav li.cd-selected,
+.grid li h3,
+p.header-btns a.btn:hover,
+.filters li::after, 
+.member-social-links i,
+.popular .select,
+.pagination > .active > a, 
+.pagination > .active > a:focus, 
+.pagination > .active > a:hover, 
+.pagination > .active > span, 
+.pagination > .active > span:focus, 
+.pagination > .active > span:hover,
+.filters span,
+.make-reservation input[type="submit"]:hover,
+.timeline-img,
+.navbar-default .navbar-nav > li > a.active,
+.timeline-block::before,
+.cbp_tmtimeline > li:nth-child(2n+1) .cbp_tmlabel,
+body .pagination .active > a,
+.amaezi_header_content .subscribe > input[type="submit"],
+.section-title.left-border::after,
+.post-pagination .pagination a{
+    background-color: #2BDE73;
+}
+
+/*BACKGROUND COLOR - HOVER STATE*/
+.progress-bar-success,
+.btn-danger:hover,
+#cd-zoom-in:hover, 
+#cd-zoom-out:hover,
+.member-social-links i:hover,
+.share-via a:hover,
+.social_links > a:hover,
+.pagination > li > a:focus, 
+.pagination > li > a:hover, 
+.pagination > li > span:focus, 
+.pagination > li > span:hover,
+.schedule-visit-btn:hover,
+.tagcloud > a:hover,
+.cbp_tmtimeline > li .cbp_tmlabel,
+.popular .select:hover,
+.isotope-filters li a:hover,
+.isotope-filters li a.current,
+p.header-btns a.btn,
+.make-reservation input[type="submit"],
+.amaezi-top:hover,
+.amaezi_header_content .subscribe > input[type="submit"]:hover,
+.amaezi_header_content .subscribe > input[type="submit"]:focus,
+body .pagination .active > a:hover,
+.post-pagination .pagination a:hover{
+    background-color: #1fcb64;
+}
+
+.our-menu-shortcode .food-modal{
+    box-shadow: 
+        inset 0 0 0 16px #fff, 
+        inset 0 0 0 17px #2BDE73, 
+        inset 0 0 0 18px #fff, 
+        inset 0 0 0 19px #2BDE73, 
+        inset 0 0 0 20px #fff, 
+        inset 0 0 0 21px #2BDE73,
+        0 4px 20px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 
+        inset 0 0 0 16px #fff, 
+        inset 0 0 0 17px #2BDE73, 
+        inset 0 0 0 18px #fff, 
+        inset 0 0 0 19px #2BDE73, 
+        inset 0 0 0 20px #fff, 
+        inset 0 0 0 21px #2BDE73,
+        0 4px 20px rgba(0,0,0,0.4);
+}
+#menu_category .menu-content,
+.menu-wrapper > div > div{
+    box-shadow: 
+        inset 0 0 0 16px #fff, 
+        inset 0 0 0 17px #2BDE73, 
+        inset 0 0 0 18px #fff, 
+        inset 0 0 0 19px #2BDE73, 
+        inset 0 0 0 20px #fff, 
+        inset 0 0 0 21px #2BDE73;
+    -webkit-box-shadow: 
+        inset 0 0 0 16px #fff, 
+        inset 0 0 0 17px #2BDE73, 
+        inset 0 0 0 18px #fff, 
+        inset 0 0 0 19px #2BDE73, 
+        inset 0 0 0 20px #fff, 
+        inset 0 0 0 21px #2BDE73;
+}
+.dark-section #menu_category .menu-content,
+.dark-section .menu-wrapper > div > div{
+    box-shadow: 
+        0 0 0 0px #2C2C2C inset, 
+        0 0 0 1px #2BDE73 inset, 
+        0 0 0 3px #2C2C2C inset, 
+        0 0 0 4px #2BDE73 inset;
+    -webkit-box-shadow: 
+        0 0 0 0px #2C2C2C inset, 
+        0 0 0 1px #2BDE73 inset, 
+        0 0 0 3px #2C2C2C inset, 
+        0 0 0 4px #2BDE73 inset;
+}

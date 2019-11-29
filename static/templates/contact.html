@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Fundraising - Ultimate Charity/Donations HTML Template{% endblock pagetitle %}
+
+{% block headertitle %}Get in Touch{% endblock headertitle %}
+
+{% block headersubtitle %}Your donation is protected. Share your love over a cause{% endblock headersubtitle %}
+
+{% block contenttitle %}
+<h2 class="section-title"> Fundraising Company <span>For Better Lifes </span></h2>
+<p>Fundraising is now made easy using Fundraising HTML Template! Share the news and press<br /> releases to your focus group and complete charity causes using donations.</p>
+{% endblock contenttitle %}
+
+{% block bodycontent %}
+<form method="POST" action="php/contact_form.php"  class="row make-reservation animateIn" data-animate="fadeIn">
+    <div class="col-md-6">
+        <div class="contact-section">
+            <div id="google-map"></div>
+            <div id="cd-zoom-in"></div>
+            <div id="cd-zoom-out"></div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <input id="contactName" type="text" placeholder="Full Name" name="contactName" />
+            </div>
+            <div class="col-md-12">
+                <input id="contactEmail" type="text" placeholder="Email" name="contactEmail" />
+            </div>
+            <div class="col-md-6">
+                <input id="contactPhone" type="text" placeholder="Phone" name="contactPhone" />
+            </div>
+            <div class="col-md-6">
+                <select name="contactSubject">
+                    <option>Subject</option>
+                    <option value="Donate for a Cause">Donate for a Cause</option>
+                    <option value="Other Message">Other Message</option>
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <button type="submit" name="submit" class="btn btn-danger fullwidth btn-lg unbordered right-side">Say Hello <i class="icon-cursor"></i></button>
+            </div>
+            <p class="success-message">Thanks for your booking! Have a nice day!</p>
+        </div>
+    </div>
+</form>
+{% endblock bodycontent %}
