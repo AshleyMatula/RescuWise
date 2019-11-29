@@ -24,7 +24,7 @@ class AnimalIndex(ListView):
     model = Animal
     template_name = 'animals.html'
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 class HomePage(TemplateView):
     template_name = 'contact.html'
 
@@ -211,7 +211,7 @@ class Instagram3(TemplateView):
 
 # class taskslistlayout2(TemplateView):
 #       template_name = 'tasks-list-layout-2.html'
-=======
+# =======
 
 
 class Home(TemplateView):
@@ -364,4 +364,4 @@ class CreateShelter(CreateView):
 class ListShelters(ListView):
     template_name = "listview.html"
     model = Shelter
->>>>>>> c17c69e883c983d7c8e54574e47ec05be985c1d6
+# >>>>>>> c17c69e883c983d7c8e54574e47ec05be985c1d6

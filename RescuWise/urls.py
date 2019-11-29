@@ -28,7 +28,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('animals/', AnimalIndex.as_view(), name='animals'),
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
+# <<<<<<< HEAD
     path('', HomePage.as_view(), name='home'),
     path('about/', About.as_view(), name='about'),
     path('404/', pages404.as_view(), name='404'),
@@ -91,7 +91,7 @@ urlpatterns = [
     # path('tasks-grid-layout.html', tasksgridlayout.as_view(), name='tasksgridlayout'),
     # path('tasks-list-layout-1.html', taskslistlayout1.as_view(), name='taskslistlayout1'),
     # path('tasks-list-layout-2.html', taskslistlayout2.as_view(), name='taskslistlayout2'),
-=======
+# =======
     # Login and Auth Views #
     path('signup/', SignUp.as_view(), name="signup"),
     path('login/', Login.as_view(), name="login"),
@@ -113,6 +113,6 @@ urlpatterns = [
     path('', Home.as_view()),
     path('<template_name>/', DynamicStaticPages.as_view()),
 
-
->>>>>>> c17c69e883c983d7c8e54574e47ec05be985c1d6
+# 
+# >>>>>>> c17c69e883c983d7c8e54574e47ec05be985c1d6
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
