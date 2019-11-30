@@ -1,19 +1,26 @@
 from django.views.generic import TemplateView
+from django.shortcuts import render
 
 class Home(TemplateView):
     template_name = "index.html"
 
-class DynamicStaticPages(TemplateView):
+class About(TemplateView):
+    template_name = 'about.html'
 
-    def get_template_names(self, **kwargs):
-        if self.kwargs.get('template_name'):
-            # favicons load first so with out this this dynamic view doesn't work.
-            if self.kwargs.get('template_name') == "favicon.ico":
-                pass
-            else:
-                return self.kwargs.get('template_name')
-        #if there is no url default it index.html
-        return "index.html"
+class BlogArticle(TemplateView):
+    template_name = 'blog-article.html'
+
+class BlogPage(TemplateView):
+    template_name = 'blog.html'
+
+class Fundraising(TemplateView):
+    template_name = 'fundraising-causes.html'
+
+class Gallery3(TemplateView):
+    template_name = 'gallery-3-columns.html'
+
+class Instagram3(TemplateView):
+    template_name = 'gallery-instagram-3-columns.html'
 
 # Error handling
 def page_not_found_view(request, exception):

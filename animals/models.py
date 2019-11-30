@@ -3,7 +3,7 @@ from shelters.models import Shelter
 
 class Animal(models.Model):
     animal_type = models.CharField(max_length=200, default="unknown")
-    current_shelter = models.OneToOneField(Shelter, on_delete=models.CASCADE)
+    current_shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE)
     profile_picture = models.ImageField(default='images/default.png', upload_to='images/')
     breed = models.CharField(max_length=200, default="unknown")
     color = models.CharField(max_length=200, default="unknown")

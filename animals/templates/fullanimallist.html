@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block pagetitle %}Current Animals{% endblock pagetitle %}
+
+{% block headertitle %}{% endblock headertitle %}
+
+{% block headersubtitle %}{% endblock headersubtitle %}
+
+{% block contenttitle %}
+<h2 class="section-title">Current animals <span>that need some help.</span></h2>
+<p>The list is below.</p>
+{% endblock contenttitle %}
+
+{% block bodycontent %}
+{% for a in animals %}
+    <!-- add a spacer element every 3rd object -->
+    {% if forloop.counter0 != 0 and forloop.counter0|divisibleby:3 %}<div class="spacer_50"></div>{% endif %}
+    <div class="col-md-4">
+        <div class="row">
+            <div class="single-post clearfix animateIn" data-animate="fadeIn">
+                <div class="col-md-12 post-thumbnail">
+                    <figure class="effect-lexi">
+                        <img src="{{ a.profile_picture.url }}" alt=""/>
+                        <figcaption>
+                            <i class="icon-arrow-right-circle"></i>
+                        </figcaption>           
+                    </figure>
+                </div>
+                <div class="col-md-12 post-details">
+                    <div class="post-details-holder">
+                        <h3 class="post-title text-center">
+                            <a href="article.html">{{ a.name }} - {{ a.id_number }}</a>
+                        </h3>
+                        <div class="give-goal-progress">
+                            <div class="raised">
+                                <span class="income">${{a.current_pledges}}</span> of <span class="goal-text">${{a.goal}}</span> raised        
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" 
+                                    aria-valuenow="{{a.current_pledges}}" aria-valuemin="0" aria-valuemax="{{a.goal}}" style="width:{{a.current_pledges}}%">
+                                {{a.current_pledges}}% Raised</div>
+                            </div>
+                        </div>
+                        <div class="give-donate-donors-number">
+                            <i class="icon-people icons"></i> Raised by 11 Donors
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+{% endfor %}
+{% endblock bodycontent %}

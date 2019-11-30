@@ -9,9 +9,15 @@ class CreateAnimal(CreateView):
     success_url = 'listanimals'
 
 class ListAnimals(ListView):
-    template_name = "listview.html"
+    template_name = "fullanimallist.html"
     model = Animal
+    context_object_name = "animals"
     fields = [
+        'profile_picture',
+        'name',
+        'id_number',
+        'current_pledges',
+        'goal',
         'animal_type',
         'current_shelter',
         'breed',
