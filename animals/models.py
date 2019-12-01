@@ -21,3 +21,12 @@ class Animal(models.Model):
 
     def __str__(self):
         return f"{self.id_number} {self.name} - {self.current_shelter}"
+
+    # calculate percentage of goal completed and convert to int
+    # to be easily referenced in templates as .goal_percent
+    # (i'm leaving it as a multiline for readability)
+    def goal_percent(self):
+        gp = self.current_pledges / self.goal
+        gp = gp * 100
+        gp = int(gp)
+        return gp
