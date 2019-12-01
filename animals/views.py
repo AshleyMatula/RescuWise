@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.db.models import F
 from django.views.generic import ListView, CreateView
 from .models import Animal
 
