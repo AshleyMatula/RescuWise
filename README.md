@@ -30,6 +30,8 @@ Someone needs to write an elevator pitch for this thing.
    ```
    SECRET_KEY=ja391197!tv&r$qbptd10(ecx0visy&ur#*)se&+*j(+v9#fbp
 
+   DEBUG=TRUE
+
    ### LOCAL DB CREDENTIALS
    DATABASE_NAME=
    DATABASE_USER=

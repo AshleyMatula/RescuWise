@@ -27,7 +27,8 @@ load_dotenv(dotenv_path)
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+# fix to convert env variable to boolean value
+DEBUG = os.environ['DEBUG'] == "TRUE"
 
 ALLOWED_HOSTS = [
     'rescuwise.herokuapp.com',
