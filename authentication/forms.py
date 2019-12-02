@@ -1,7 +1,5 @@
 from django import forms
-from core.models import *
-
-
+from authentication.models import Profile
 
 class UserSignUp(forms.ModelForm):
 	class Meta:

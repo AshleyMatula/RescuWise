@@ -16,10 +16,3 @@ six==1.13.0
 sqlparse==0.3.0
 urllib3==1.25.7
 whitenoise==4.1.4
-<<<<<<< HEAD
-python-dotenv==0.10.3
-psycopg2-binary==2.8.4
-boto3==1.10.15
-django-storages==1.7.2
-=======
->>>>>>> c17c69e883c983d7c8e54574e47ec05be985c1d6

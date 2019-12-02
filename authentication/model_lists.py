@@ -1,14 +1,11 @@
 YES_NO = (
-('Yes','Yes'),
-('No','No'),
-
+	('Yes','Yes'),
+	('No','No'),
 )
 
 user_type_choices = (
 		('shelter','I represent a pet shelter organization'),
 		('individuals','I am an individual interested in RescuWise'),
-
-
 )
 
 state_validation_choices = (

@@ -488,7 +488,7 @@ footer {
 footer .footer-top {
     background-attachment: fixed;
     background-color: #021426;
-    background-image: url("../img/content/footer_bg-1.jpg");
+    background-image: url(".../img/content/footer_bg-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -868,13 +868,13 @@ body .pagination li a,
 
 /*BACKGROUNG IMAGES FOR HEADER*/
 .amaezi-fullscreen-header{
-    background-image: url("../img/header-banners/top_banner.jpg");
+    background-image: url(".../img/header-banners/top_banner.jpg");
 }
 .page-single-blog .amaezi-fullscreen-header{
-    background-image: url("../img/header-banners/fundraising_activism_45_a.jpg");
+    background-image: url(".../img/header-banners/fundraising_activism_45_a.jpg");
 }
 .page-blog .amaezi-fullscreen-header{
-    background-image: url("../img/content/breadcrumbs.jpg");
+    background-image: url(".../img/content/breadcrumbs.jpg");
 }
 
 
@@ -1323,16 +1323,16 @@ section{
 }
 
 .amaezi_header_content .amaezi-divider{
-    background: rgba(0, 0, 0, 0) url("../img/divid-light.png") repeat-x scroll 0 0;
+    background: rgba(0, 0, 0, 0) url(".../img/divid-light.png") repeat-x scroll 0 0;
     width: 198px;
 }
 .dark-section .amaezi-divider{
-    background: rgba(0, 0, 0, 0) url("../img/divid-light.png") repeat-x scroll 0 0;
+    background: rgba(0, 0, 0, 0) url(".../img/divid-light.png") repeat-x scroll 0 0;
 }
 .amaezi-divider {
     opacity: 0.5;
     display: block;
-    background: rgba(0, 0, 0, 0) url("../img/divid-dark.png") repeat-x scroll 0 0;
+    background: rgba(0, 0, 0, 0) url(".../img/divid-dark.png") repeat-x scroll 0 0;
     height: 10px;
     margin: 18px auto 5px;
     position: relative;
@@ -2825,7 +2825,7 @@ nav#filter-main-nav {
 #cd-zoom-in, 
 #cd-zoom-out {
     background-color: #ce7270;
-    background-image: url("../img/svg/icon-controller.svg");
+    background-image: url(".../img/svg/icon-controller.svg");
     background-repeat: no-repeat;
     background-size: 32px 64px;
     cursor: pointer;
@@ -2994,7 +2994,7 @@ nav#filter-main-nav {
     top: 0;
     z-index: 1;
     opacity: 0;
-    background-image: url('../img/portfolio-plus.png');
+    background-image: url('.../img/portfolio-plus.png');
     background-repeat: no-repeat;
     background-position: 50% 43%;
     transition: all 300ms ease-in-out;
@@ -3414,7 +3414,7 @@ footer .footer-bottom .menu .menu-item a {
     z-index: 10;
 }
 .search-icon {
-    background: url("../img/svg/magnifier.svg") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
+    background: url(".../img/svg/magnifier.svg") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
     color: #ff0000;
     height: 30px;
     right: 0;
@@ -3530,7 +3530,7 @@ input[type="search"] { /* reset normalize */
     overflow: hidden;
     right: 0;
     top: 50%;
-    background: transparent url(../img/svg/magnifier.svg) no-repeat center center;
+    background: transparent url(.../img/svg/magnifier.svg) no-repeat center center;
     background-size: 100%;
     border: none;
     pointer-events: none;
@@ -4028,25 +4028,25 @@ input[type="search"] { /* reset normalize */
 
 /*DAILY SPECIALS SHORTCODES*/
 .daily-special:nth-child(1){
-    background-image: url("../img/day1.jpg");
+    background-image: url(".../img/day1.jpg");
 }
 .daily-special:nth-child(2){
-    background-image: url("../img/day2.jpg");
+    background-image: url(".../img/day2.jpg");
 }
 .daily-special:nth-child(3){
-    background-image: url("../img/day3.jpg");
+    background-image: url(".../img/day3.jpg");
 }
 .daily-special:nth-child(4){
-    background-image: url("../img/day4.jpg");
+    background-image: url(".../img/day4.jpg");
 }
 .daily-special:nth-child(5){
-    background-image: url("../img/day5.jpg");
+    background-image: url(".../img/day5.jpg");
 }
 .daily-special:nth-child(6){
-    background-image: url("../img/day6.jpg");
+    background-image: url(".../img/day6.jpg");
 }
 .daily-special:nth-child(7){
-    background-image: url("../img/day7.jpg");
+    background-image: url(".../img/day7.jpg");
 }
 
 .daily-special:hover{
@@ -4592,7 +4592,7 @@ h5.food-title,
     margin-left: -10%;
     top: 50%;
     padding: 40px;
-    background: #fff url(../img/white_paperboard.jpg);
+    background: #fff url(.../img/white_paperboard.jpg);
     opacity: 0;
     pointer-events: none;
     -webkit-transform: translateZ(1000px);
@@ -5321,7 +5321,7 @@ a.viewdetails:hover,
     top: 30px;
     overflow: hidden;
     border: none;
-    background: url(../img/cross.png) no-repeat center center;
+    background: url(.../img/cross.png) no-repeat center center;
     text-indent: 200%;
     color: transparent;
     outline: none;
