@@ -1,0 +1,10 @@
+{% extends "ui/uibase.html" %}
+{% load static %}
+{% load socialaccount %}
+
+{% block pagetitle %}Login to RescueWise!{% endblock pagetitle %}
+
+{% block bodycontent %}
+<h1>did this fucking work?</h1>
+<a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook</a>
+{% endblock bodycontent %}

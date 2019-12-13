@@ -4,12 +4,19 @@ from django.shortcuts import render, redirect
 
 from django.core.mail import send_mail
 
-from django.views.generic import View, FormView, TemplateView
+from django.views.generic import View, FormView, TemplateView, DetailView
 
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-
+from django.contrib.auth.mixins import LoginRequiredMixin
+ 
 from .forms import UserSignUp
+
+class DashboardView(LoginRequiredMixin, TemplateView):
+    login_url = '/login/'
+    redirect_field_name = 'redirect_to'
+
+    template_name = 'ui/dashboard.html'
 
 class SignUp(View):
 
@@ -67,26 +74,23 @@ class SignUp(View):
             })
 
 
-class Login(FormView):
-    template_name = "login.html"
-    form_class = AuthenticationForm
-    success_url = "/dashboard/"
+# class Login(FormView):
+#     template_name = "login.html"
+#     form_class = AuthenticationForm
+#     success_url = "/dashboard/"
 
-    def post(self, request, *args, **kwargs):
-        form = self.get_form()
-        if form.is_valid():
-            user = form.get_user()
-            login(self.request, user)
-            return redirect(self.get_success_url())
-        else:
-            return self.form_invalid(form)
+#     def post(self, request, *args, **kwargs):
+#         form = self.get_form()
+#         if form.is_valid():
+#             user = form.get_user()
+#             login(self.request, user)
+#             return redirect(self.get_success_url())
+#         else:
+#             return self.form_invalid(form)
 
 
-class Logout(FormView):
+# class Logout(FormView):
 
-    def get(self, request, *args, **kwargs):
-        logout(request)
-        return redirect("/")
-
-class DashboardView(TemplateView):
-    template_name = 'dashboard.html'
+#     def get(self, request, *args, **kwargs):
+#         logout(request)
+#         return redirect("/")
