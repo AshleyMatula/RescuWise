@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # fix to convert env variable to boolean value
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'rescuwise.herokuapp.com',
