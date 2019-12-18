@@ -53,7 +53,7 @@
     <div class="row">
         <div class="container">
             <div class="col-md-3">
-                <a class="navbar-brand" href="home-image.html">
+                <a class="navbar-brand" href="{% url 'home' %}">
                     <img alt="logo" src="{% static "img/RescuWiseLogo.png" %}">
                 </a>
             </div>
@@ -87,11 +87,11 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="theme-main-nav-menu">
                             <ul class="nav navbar-nav navbar-left">
-                                <li><a href="home-image.html">Home</a></li>
-                                <li><a href="animals.html">Animals</a></li>
-                                <li><a href="how-it-works.html">How it Works</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'listanimals' %}">Animals</a></li>
+                                <li><a href="{% url 'howitworks' %}">How it Works</a></li>
+                                <li><a href="{% url 'aboutus' %}">About</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
                         </div>
                         <!-- /.navbar-collapse -->
