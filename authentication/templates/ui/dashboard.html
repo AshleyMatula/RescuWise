@@ -7,10 +7,17 @@
 <div style="text-align:center" class="col-sm-12 ">
 <h1>Welcome to your User Dashboard</h1>
 <h4>Someone need to format this so it doesnt suck.</h2>
+<form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <button type="submit">Sign Out</button>
+</form>
 <br>
 </div>
     <div class="col-sm-2">
-      <p><a href="{% url 'account_logout' %}">log out</a></p>
+      <p></p>
       <p><a href="#">edit profile</a></p>
       <p><a href="#">view pledges</a></p>
       <p><a href="#">some other stuff</a></p>
