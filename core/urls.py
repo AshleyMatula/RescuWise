@@ -5,5 +5,4 @@ from .views import *
 urlpatterns = [
     # General static views
     path('', Home.as_view()),
-    #path('<template_name>/', DynamicStaticPages.as_view()),
 ]
