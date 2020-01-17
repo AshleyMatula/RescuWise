@@ -18,6 +18,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static "img/favicon.png"%}">
 
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/d6c332c78e.js" crossorigin="anonymous"></script>
+
     <!-- Begin: CSS Stylesheets -->
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}"/>
@@ -53,22 +56,17 @@
     <div class="row">
         <div class="container">
             <div class="col-md-3">
-                <a class="navbar-brand" href="home-image.html">
-                    <img alt="logo" src="{% static "img/theme_logo_dark.png" %}">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img alt="logo" src="{% static "img/RescuWiseLogo.png" %}">
                 </a>
             </div>
             <div class="col-md-9 fundraising-contact-details">
-                <a href="#">
-                    <i class="icon-phone icons"></i> Call Us: <label>+34-2345-3456</label>
-                </a>
-                <a href="#">
-                    <i class="icon-location-pin icons"></i> Our Address: <label>93L, Str. J. Martin, Rome</label>
-                </a>
+
                 <div class="header-nav-actions">
                     <!-- DONATIONS BUTTON -->
-                    <a class="donate-now" href="#">
-                        <i class="icon-heart icons"></i> Give Donation
-                    </a>
+                    <button type="button" class="btn btn-lg btn-login">
+                       LOG IN
+                  </button>
                 </div>
             </div>
         </div>
@@ -92,37 +90,11 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="theme-main-nav-menu">
                             <ul class="nav navbar-nav navbar-left">
-                                <li><a href="home-image.html">Home</a></li>
-                                <li><a href="fundraising-causes.html">Fundraising Causes</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="gallery-2-columns.html">Gallery 2 Columns</a></li>
-                                        <li><a href="gallery-3-columns.html">Gallery 3 Columns</a></li>
-                                        <li><a href="gallery-4-columns.html">Gallery 4 Columns</a></li>
-                                        <li><a href="gallery-mixed-columns.html">Gallery Mixed Columns</a></li>
-                                        <li><a href="gallery-instagram-3-columns.html">Instagram 3 Columns</a></li>
-                                        <li><a href="gallery-instagram-4-columns.html">Instagram 4 Columns</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="home-image.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="fundraising-causes.html">Fundraising Causes</a></li>
-                                        <li><a href="contact.html">Contact us</a></li>
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="404.html">404 Not Found</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="blog.html">Blog Archive</a></li>
-                                        <li><a href="blog-article.html">Article Page</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="about.html">About</a></li>
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'listanimals' %}">Animals</a></li>
+                                <li><a href="{% url 'howitworks' %}">How it Works</a></li>
+                                <li><a href="{% url 'aboutus' %}">About</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
                             </ul>
                         </div>
                         <!-- /.navbar-collapse -->
@@ -138,7 +110,9 @@
     <header class="amaezi-fullscreen-header">
 
         <!-- HEADER OVERLAY -->
-        <div class="amaezi-header-overlay"></div>
+        <div class="amaezi-header-overlay">
+          <img alt="" src="{% static "img/Puppies.jpg"%}">
+        </div>
 
         <!-- Header Video -->
         <!-- <div class='youtube-video'></div>
@@ -259,12 +233,6 @@
                             <div class="social_links">
                                 <a href="#">
                                     <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-dribbble"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-stumbleupon"></i>
                                 </a>
                                 <a href="#">
                                     <i class="fa fa-linkedin"></i>
