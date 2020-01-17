@@ -4,12 +4,19 @@ from django.shortcuts import render, redirect
 
 from django.core.mail import send_mail
 
-from django.views.generic import View, FormView, TemplateView
+from django.views.generic import View, FormView, TemplateView, DetailView
 
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import UserSignUp
+
+
+class DashboardView(LoginRequiredMixin, TemplateView):
+    login_url = '/accounts/login/'
+    template_name = 'ui/dashboard.html'
+
 
 class SignUp(View):
 
@@ -26,7 +33,7 @@ class SignUp(View):
         # load both forms to check validity
         user_form = UserCreationForm(self.request.POST)
         profile_form = UserSignUp(self.request.POST)
-        
+
         # if both are valid...
         if user_form.is_valid() and profile_form.is_valid():
 
@@ -52,7 +59,8 @@ class SignUp(View):
 
             send_mail(
                 'New User has signed up',
-                user.first_name + ' ' + user.last_name + ' signed up with the email ' + user.email,
+                user.first_name + ' ' + user.last_name +
+                ' signed up with the email ' + user.email,
                 os.environ.get('EMAIL'),
                 [os.environ.get('ADMIN_EMAIL')],
                 fail_silently=False,
@@ -65,28 +73,3 @@ class SignUp(View):
                 'user_form': user_form,
                 'profile_form': profile_form
             })
-
-
-class Login(FormView):
-    template_name = "login.html"
-    form_class = AuthenticationForm
-    success_url = "/dashboard/"
-
-    def post(self, request, *args, **kwargs):
-        form = self.get_form()
-        if form.is_valid():
-            user = form.get_user()
-            login(self.request, user)
-            return redirect(self.get_success_url())
-        else:
-            return self.form_invalid(form)
-
-
-class Logout(FormView):
-
-    def get(self, request, *args, **kwargs):
-        logout(request)
-        return redirect("/")
-
-class DashboardView(TemplateView):
-    template_name = 'dashboard.html'

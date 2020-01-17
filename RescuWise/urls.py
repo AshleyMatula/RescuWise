@@ -3,7 +3,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    
     # include core app urls (static/non-auth pages)
     path('', include('core.urls')),
 
@@ -15,5 +14,4 @@ urlpatterns = [
 
     # include authentication urls
     path('', include('authentication.urls')),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

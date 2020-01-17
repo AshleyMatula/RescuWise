@@ -1,0 +1,25 @@
+{% extends "ui/uibase.html" %}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+{% load static %}
+
+{% block bodycontent %}
+  <h2>Login to your account</h2>
+  <form method="POST" id="registerForm" class="clearfix">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="form-group">
+      <button class="btn btn-outline-info" type="submit">Log In</button>
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <div class="text-muted">Need an account? <a href="/signup">Sign up now</a></div>
+    <div class="text-muted">Forgot Password? <a href="/password_reset"> Reset your password</a></div>
+    <a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook Signup</a>
+    <div style="color:red;">
+      {{ formset.non_form_errors }}
+      {{ form.non_field_errors }}
+    </div>
+  </div>
+
+{% endblock %}

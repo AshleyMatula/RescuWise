@@ -2,11 +2,30 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView
 from .models import Animal
 
+
 class CreateAnimal(CreateView):
-    template_name = "createview.html"
+    template_name = "createanimal.html"
     model = Animal
-    fields = ['animal_type','name']
-    success_url = 'listanimals'
+    fields = [
+        'profile_picture',
+        'animal_type',
+        'color',
+        'breed',
+        'age',
+        'euth_date',
+        'id_number',
+        'current_pledges',
+        'goal',
+        'neutered_spayed',
+        'current_shelter',
+        'name',
+        'description',
+        'hw',
+        'surrender_reason',
+        'weight',
+    ]
+    success_url = 'listanimals/'
+
 
 class ListAnimals(ListView):
     template_name = "fullanimallist.html"
@@ -22,4 +41,5 @@ class ListAnimals(ListView):
         'current_shelter',
         'breed',
         'color',
-        'name',]
+        'name',
+    ]
