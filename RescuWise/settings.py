@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # fix to convert env variable to boolean value
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'rescuwise.herokuapp.com',
@@ -174,6 +174,11 @@ else:
 
 # AUTHENTICATION SETTINGS
 
+# We will need to set up an email server at some point,
+# using the console for now.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_SIGNUP_FORM_CLASS = 'authentication.forms.SignupForm'
 LOGIN_REDIRECT_URL = '/accounts/dashboard/'
 LOGOUT_REDIRECT_URL = '/'
 
